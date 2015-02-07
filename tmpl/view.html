@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="shortcut icon" href="/static/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<title>{{.Title}}</title>
+</head>
+
+<body>
+<script type="text/javascript">
+function confDel() {
+	var r = confirm("Are you sure?");
+	if (r == true) {
+    		window.location = "/delete/{{.Cat}}/{{.Title}}";
+	} else {
+    		window.location = "/view/{{.Cat}}/{{.Title}}";
+	} 
+}
+</script>
+<div id='top'>{{.Menu.HTML}}</div><br>
+<span id="h">{{.Title}}</span>
+<span id="control"><a href="/edit/{{.Cat}}/{{.Title}}" title="Edit"> &#10000;</a>
+	<a href="/" title="Delete" onclick="confDel();"> &#9760;</a></span>
+<div id="text">{{ .Article.HTML}}</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="/static/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<title>{{.Title}}</title>
+</head>
+<body>
+<div id='top'>{{.Menu.HTML}}</div><br>
+<div id='con'><form action="/save/{{.Cat}}/{{.Title}}" method="POST">
+	<input type="text" name="cat" value="{{.Cat}}">
+	<input type="text" name="title" value="{{.Title}}">
+	<textarea name="body">{{printf "%s" .Body}}</textarea>
+	<input type="submit" value="Save">  
+	<input type="button" value="Cancel" onClick="window.location.href='/view/{{.Cat}}/{{.Title}}'">
+</form></div>
+</body>
+</html>
